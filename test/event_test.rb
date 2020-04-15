@@ -41,7 +41,9 @@ class EventTest < Minitest::Test
     @event.add_food_truck(@food_truck3)
 
     assert_equal [@food_truck1, @food_truck2, @food_truck3] ,@event.food_trucks
+    assert_equal ["Rocky Mountain Pies", "Ba-Nom-a-Nom", "Palisade Peach Shack"], @event.food_truck_names
   end
+
 end
 # A FoodTruck will be able to calculate their `potential_revenue` -
 # the sum of all their items' price * quantity.
@@ -55,9 +57,6 @@ end
 #represented as a String. It will return a list of FoodTrucks that have
 # that item in stock.
 
-
-# pry(main)> event.food_truck_names
-# #=> ["Rocky Mountain Pies", "Ba-Nom-a-Nom", "Palisade Peach Shack"]
 #
 # pry(main)> event.food_trucks_that_sell(item1)
 # #=> [#<FoodTruck:0x00007fe1348a1160...>, #<FoodTruck:0x00007fe134910650...>]
