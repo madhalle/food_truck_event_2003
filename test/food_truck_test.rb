@@ -13,6 +13,9 @@ class FoodTruckTest < Minitest::Test
     @food_truck2 = FoodTruck.new("Ba-Nom-a-Nom")
     @food_truck3 = FoodTruck.new("Palisade Peach Shack")
 
+    @item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
+    @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
+
   end
 
   def test_it_exists

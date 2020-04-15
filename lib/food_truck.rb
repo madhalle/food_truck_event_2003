@@ -22,7 +22,9 @@ class FoodTruck
   end
 
   def potential_revenue
-
+    @inventory.keys.sum do |key|
+      (key.price[1..-1].to_f) * @inventory[key]
+    end
   end
-  
+
 end
