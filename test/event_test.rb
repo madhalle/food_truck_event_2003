@@ -9,6 +9,8 @@ class EventTest < Minitest::Test
     @event = Event.new("South Pearl Street Farmers Market")
 
     @food_truck1 = FoodTruck.new("Rocky Mountain Pies")
+    @food_truck2 = FoodTruck.new("Ba-Nom-a-Nom")
+    @food_truck3 = FoodTruck.new("Palisade Peach Shack")
 
     @item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
     @item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
@@ -24,6 +26,22 @@ class EventTest < Minitest::Test
     assert_equal "South Pearl Street Farmers Market", @event.name
     assert_equal [], @event.food_trucks
   end
+
+  def test_add_food_truck
+    @food_truck1.stock(@item1, 35)
+    @food_truck1.stock(@item2, 7)
+
+    @food_truck2.stock(@item4, 50)
+    @food_truck2.stock(@item3, 25)
+
+    @food_truck3.stock(@item1, 65)
+
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+
+    assert_equal [@food_truck1, @food_truck2, @food_truck3] ,@event.food_trucks
+  end
 end
 # A FoodTruck will be able to calculate their `potential_revenue` -
 # the sum of all their items' price * quantity.
@@ -38,28 +56,9 @@ end
 # that item in stock.
 
 
+
 #
-# pry(main)> food_truck1.stock(item1, 35)
 #
-# pry(main)> food_truck1.stock(item2, 7)
-#
-# pry(main)> food_truck2 = FoodTruck.new("Ba-Nom-a-Nom")
-# #=> #<FoodTruck:0x00007fe1349bed40...>
-#
-# pry(main)> food_truck2.stock(item4, 50)
-#
-# pry(main)> food_truck2.stock(item3, 25)
-#
-# pry(main)> food_truck3 = FoodTruck.new("Palisade Peach Shack")
-# #=> #<FoodTruck:0x00007fe134910650...>
-#
-# pry(main)> food_truck3.stock(item1, 65)
-#
-# pry(main)> event.add_food_truck(food_truck1)
-#
-# pry(main)> event.add_food_truck(food_truck2)
-#
-# pry(main)> event.add_food_truck(food_truck3)
 #
 # pry(main)> event.food_trucks
 # #=> [#<FoodTruck:0x00007fe1348a1160...>, #<FoodTruck:0x00007fe1349bed40...>, #<FoodTruck:0x00007fe134910650...>]
