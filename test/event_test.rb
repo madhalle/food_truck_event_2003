@@ -75,28 +75,18 @@ class EventTest < Minitest::Test
 
     expected = [@food_truck1, @food_truck3]
     assert_equal expected, @event.food_trucks_that_sell(@item1)
+    assert_equal [@food_truck2], @event.food_trucks_that_sell(@item4)
   end
+
+  
 
 end
 # A FoodTruck will be able to calculate their `potential_revenue` -
 # the sum of all their items' price * quantity.
 #
-# A Event is responsible for keeping track of FoodTrucks.
-# It should have a method called `food_truck_names` that returns
-#an array of all the FoodTruck's names.
-#
-# Additionally, the Event should have a method called
-#`food_trucks_that_sell` that takes an argument of an item
-#represented as a String. It will return a list of FoodTrucks that have
-# that item in stock.
 
-#
-# pry(main)> event.food_trucks_that_sell(item1)
-# #=> [#<FoodTruck:0x00007fe1348a1160...>, #<FoodTruck:0x00007fe134910650...>]
-#
-# pry(main)> event.food_trucks_that_sell(item4)
-# #=> [#<FoodTruck:0x00007fe1349bed40...>]
-#
+
+
 # pry(main)> food_truck1.potential_revenue
 # #=> 148.75
 #
