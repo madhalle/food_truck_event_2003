@@ -122,6 +122,19 @@ class EventTest < Minitest::Test
     assert_equal expected, @event.total_inventory
   end
 
+  def test_overstocked_item
+  skip
+      # You `Event` will also be able to identify `overstocked_items`.
+      #   An item is overstocked if it is sold by more
+      # than 1 food truck AND the total quantity is greater than 50.
+    assert_equal @item1, @event.overstocked_items
+  end
+
+  def test_event_sorted_item_list
+  skip
+    
+  end
+
 
   #
   # pry(main).overstocked_items

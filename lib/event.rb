@@ -22,6 +22,23 @@ class Event
     end
   end
 
-
-
+  def total_inventory
+    new_hash = {}
+    inner_hash = {}
+    @food_trucks.each do |foodtruck|
+      foodtruck.inventory.each do |item, item_quantity|
+        require "pry"; binding.pry
+        if new_hash[item] == nil
+          inner_hash[:quantity] = 0 #+ item_quantity
+          inner_hash[:food_trucks] = []
+          new_hash[item] = inner_hash
+        elsif new_hash.include?(item)
+          inner_hash[:quantity] += item_quantity
+          inner_hash[:food_trucks] << foodtruck
+          new_hash[item] = inner_hash
+        end
+      end
+    end
+    new_hash
+  end
 end
