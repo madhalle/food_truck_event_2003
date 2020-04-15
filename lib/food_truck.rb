@@ -14,6 +14,10 @@ class FoodTruck
   end
 
   def stock(item, quantity)
-    @inventory[item] = quantity
+    #@inventory[item] = quantity
+    if @inventory[item] == nil
+      @inventory[item] = 0
+    end
+    @inventory[item] += quantity
   end
 end
