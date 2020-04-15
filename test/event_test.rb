@@ -60,6 +60,10 @@ class EventTest < Minitest::Test
     assert_equal ["Rocky Mountain Pies", "Ba-Nom-a-Nom", "Palisade Peach Shack"], @event.food_truck_names
   end
 
+  def test_trucks_that_sell_item
+    
+  end
+
 end
 # A FoodTruck will be able to calculate their `potential_revenue` -
 # the sum of all their items' price * quantity.
