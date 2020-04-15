@@ -56,13 +56,6 @@ end
 # that item in stock.
 
 
-
-#
-#
-#
-# pry(main)> event.food_trucks
-# #=> [#<FoodTruck:0x00007fe1348a1160...>, #<FoodTruck:0x00007fe1349bed40...>, #<FoodTruck:0x00007fe134910650...>]
-#
 # pry(main)> event.food_truck_names
 # #=> ["Rocky Mountain Pies", "Ba-Nom-a-Nom", "Palisade Peach Shack"]
 #
