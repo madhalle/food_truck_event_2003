@@ -6,10 +6,14 @@ require './lib/event'
 
 class EventTest < Minitest::Test
   def setup
-    # @item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
-    # @item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
-
     @event = Event.new("South Pearl Street Farmers Market")
+
+    @food_truck1 = FoodTruck.new("Rocky Mountain Pies")
+
+    @item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
+    @item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
+    @item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
+    @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
   end
 
   def test_it_exists
@@ -32,29 +36,8 @@ end
 #`food_trucks_that_sell` that takes an argument of an item
 #represented as a String. It will return a list of FoodTrucks that have
 # that item in stock.
-#
-# Use TDD to create a `Event` class that responds to the following
-#interaction pattern:
-#
 
 
-
-# #=> []
-#
-# pry(main)> food_truck1 = FoodTruck.new("Rocky Mountain Pies")
-# #=> #<FoodTruck:0x00007fe1348a1160...>
-#
-# pry(main)> item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
-# #=> #<Item:0x007f9c56740d48...>
-#
-# pry(main)> item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
-# #=> #<Item:0x007f9c565c0ce8...>
-#
-# pry(main)> item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
-# #=> #<Item:0x007f9c562a5f18...>
-#
-# pry(main)> item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
-# #=> #<Item:0x007f9c56343038...>
 #
 # pry(main)> food_truck1.stock(item1, 35)
 #
